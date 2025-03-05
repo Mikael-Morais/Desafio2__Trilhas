@@ -39,7 +39,7 @@ body {
     
 }
 #imagem__ilustracao {
-    margin-bottom: 200px;
+    margin-bottom: 80px;
 }
 
 /* Estilo do formulário */
@@ -83,6 +83,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 24px;
+    border: none;
 }
 
 .campo {
@@ -107,11 +108,71 @@ input, select, button {
     border: 1px solid #080808;
     border-radius: 8px;
     width: 100%; 
-    padding: 0.5em; 
+    padding: 0.9em; 
 }
 
 .campo input:focus, .campo select:focus {
     background: #dfd4d3;
+}
+
+.campo-endereco {
+    display: flex;
+    width: 100%;
+    gap: 24px;
+}
+.campo-endereco .campo1 {
+    flex: 0.60;
+}
+.campo-endereco .campo2 {
+    flex: 0.40;
+}
+
+/* Essa parte aqui é pra esconder o input original */
+.campo-arquivo input[type="file"] {
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+/* Aqui se cria uma nova área customizada de formulário pros arquivos */
+.campo-arquivo .upload-area {
+    width: 100%;
+    height: 150px;
+    border: 2px dashed #ccc;
+    border-radius: 10px;
+    text-align: center;
+    padding: 20px;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #aaa;
+}
+
+/* 
+Esse é o campo que vai nos permitir clicar ou arrastar as imagens
+aí as posições são obrigatórias e as funções estão no script
+*/
+.campo-arquivo .upload-area .file-input {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Classe de cor adicionada pelo script, olha lá */
+.campo-arquivo .upload-area.dragover {
+    border-color: blue;
+    background-color: #f8f9fa;
+}
+
+
+.campo-arquivo input::-webkit-file-upload-button {
+    display: none;
 }
 
 .botoes {
