@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap');
+
+/* Estilos gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #FFFFFF;
+    color: #292524; 
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Contêiner principal */
+.container {
+    display: flex;
+    flex-direction: row-reverse;
+    width: 100%;
+}
+
+/* Estilo da imagem */
+.imagem {
+    position: sticky; /* Inicia como relativo dps fica fixo */
+    top: 0;
+    width: 50%;
+    height: 100vh;
+    background-color: blue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    
+}
+#imagem__ilustracao {
+    margin-bottom: 200px;
+}
+
+/* Estilo do formulário */
+.formulario-container {
+    width: 50%;
+    height: 100vh; /* Garante que o formulário role na altura da tela */
+    overflow-y: auto; /* Habilita o scroll apenas no formulário */
+    padding: 2%;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    padding: 6%;
+    border: 2px dashed #afb3ab;
+}
+
+#titulo {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    padding: 3% 6% 0 6%;
+}
+
+#subtitulo {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    padding: 0 6% 0 6%;
+}
+
+.legenda {
+    display: flex;
+    flex-direction: column;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.informacoes__pessoais, .endereco, .trilhas {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.campo {
+    text-decoration: none;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 0.875rem;
+    color: #57534E;
+}
+
+.campo label {
+    margin-bottom: 0.5em;
+    display: block;
+}
+
+.campo__termos__links {
+    text-decoration: none;
+    color: #E43A12;
+}
+
+input, select, button {
+    border: 1px solid #080808;
+    border-radius: 8px;
+    width: 100%; 
+    padding: 0.5em; 
+}
+
+.campo input:focus, .campo select:focus {
+    background: #dfd4d3;
+}
+
+.botoes {
+    display: flex;
+    flex-direction:row;
+    justify-content: flex-end;
+    gap: 24px;
+}
+
+.botao {
+    font-size: 1.2em;
+    background: #E43A12;
+    margin-bottom: 1em;
+    border: 1px solid #E43A12;
+    color: #ffffff;
+    padding: 0.2em 0.6em;
+    width: 169;
+    height: 48;
+    min-width: 120px;
+    gap: 8px;
+}
+
+.botao__cancelar {
+    font-size: 1.2em;
+    background: none;
+    margin-bottom: 1em;
+    color: #E43A12;
+    border: 1px solid #E43A12;
+    padding: 0.2em 0.6em;
+    width: 123;
+    height: 48;
+    min-width: 120px;
+    gap: 8px;
+}
+
+.botao:hover, .botao__cancelar:hover {
+    background: #f0c0c0;
+    color: #E43A12;
+}
