@@ -54,7 +54,7 @@ body {
     display: flex;
     flex-direction: column;
     padding: 6%;
-    border: 2px dashed #afb3ab;
+    border: 2px dashed #c5c9c1;
 }
 
 #titulo {
@@ -150,4 +150,5 @@ input, select, button {
 .botao:hover, .botao__cancelar:hover {
     background: #f0c0c0;
     color: #E43A12;
+    cursor: pointer;
 }
