@@ -129,7 +129,7 @@ input, select, button {
     transition: all 0.3s ease-in-out;
 }
 
-input:focus{
+.campo input:focus, .campo-endereco input:focus{
     border: 2px solid var(--select);
     outline: none;
     box-shadow: 0 0 1px 4px var(--shadow);
@@ -197,6 +197,68 @@ aí as posições são obrigatórias e as funções estão no script
     display: none;
 }
 
+
+.campo-cards {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    position: relative;
+    width: 252px;
+    height: 116px;
+    border: 2px solid var(--border);
+    border-radius: 8px;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; */
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    background: var(--bg-color);
+}
+
+.card:hover {
+    border-color: var(--select);
+}
+
+.card input {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+.card .icon {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.card .text {
+    text-align: center;
+}
+
+/* Estilo para quando o input estiver marcado */
+.card input:checked + .icon,
+.card input:checked + .text {
+    color: #007bff;
+}
+
+.card input:checked {
+    accent-color: #007bff;
+}
+
+
+
+
+
+
+
+
+
+
 .botoes {
     display: flex;
     flex-direction: row;
@@ -218,17 +280,17 @@ aí as posições são obrigatórias e as funções estão no script
 }
 .botao:hover{
     background: var(--hover-button);
-    border: 2px solid var(--hover-button);
+    border-color: var(--hover-button);
 
 }
 
 .botao__cancelar {
     background: var(--bg-color);
     color: var(--contrast);
-    border: 2px solid var(--contrast);
+    border-color: var(--contrast);
 }
 .botao__cancelar:hover {
-    background-color: var(--text-color2);
+    background-color: var(--hover-button);
     color: var(--bg-color);
-    border: 2px solid var(--text-color2);
+    border-color: var(--hover-button);
 }
