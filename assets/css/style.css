@@ -7,9 +7,21 @@
     box-sizing: border-box;
 }
 
+:root {
+    --bg-color: #FFFFFF;
+    --text-color1: #292524;
+    --text-color2: #57534E;
+    --border: #D6D3D1;
+    --upload: #A8A29E;
+    --shadow: #FEE7D6;
+    --select: #F3541C;
+    --contrast: #E43A12;
+    --hover-button: #b0290a;
+}
+
 body {
-    background-color: #FFFFFF;
-    color: #292524; 
+    background-color: var(--bg-color);
+    color: var(--text-color1); 
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -56,13 +68,13 @@ body {
 .formulario {
     display: flex;
     flex-direction: column;
-    padding: 6%;
-    border: 2px dashed #c5c9c1;
+    padding: 5.6%;
 }
 
 #titulo {
     font-family: "Poppins", sans-serif;
     font-weight: 600;
+    font-size: 24px;
     font-style: normal;
     padding: 3% 6% 0 6%;
 }
@@ -80,6 +92,7 @@ body {
     font-family: "Poppins", sans-serif;
     font-weight: 600;
     font-size: 1rem;
+    margin-bottom: 20px;
 }
 
 .informacoes__pessoais, .endereco, .trilhas {
@@ -93,32 +106,38 @@ body {
     text-decoration: none;
     font-family: "Poppins", sans-serif;
     font-weight: 400;
-    font-size: 0.875rem;
-    color: #57534E;
+    font-size: 14px;
 }
 
 .campo label {
     margin-bottom: 0.5em;
     display: block;
+    color: var(--text-color2);
 }
 
 .campo__termos__links {
     text-decoration: none;
-    color: #E43A12;
+    color: var(--contrast);
 }
 
 input, select, button {
-    border: 1px solid #080808;
+    border: 2px solid var(--border);
     border-radius: 8px;
     width: 100%; 
     padding: 0.9em; 
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
 }
 
-.campo input:focus, .campo select:focus {
-    background: #dfd4d3;
+.campo input:focus, .campo-endereco input:focus{
+    border: 2px solid var(--select);
+    outline: none;
+    box-shadow: 0 0 1px 4px var(--shadow);
 }
 
 .campo-endereco {
+    font-family: "Poppins", sans-serif;
+    color: var(--text-color2);
     display: flex;
     width: 100%;
     gap: 24px;
@@ -152,7 +171,8 @@ input, select, button {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #aaa;
+    color: var(--upload);
+    transition: all 0.3s ease-in-out;
 }
 
 /* 
@@ -161,16 +181,15 @@ aí as posições são obrigatórias e as funções estão no script
 */
 .campo-arquivo .upload-area .file-input {
     position: absolute;
-    width: 100%;
-    height: 100%;
+    /* width: 100%; */
+    /* height: 100%; */
     opacity: 0;
     cursor: pointer;
 }
 
 /* Classe de cor adicionada pelo script, olha lá */
 .campo-arquivo .upload-area.dragover {
-    border-color: blue;
-    background-color: #f8f9fa;
+    border-color: var(--select);
 }
 
 
@@ -178,41 +197,100 @@ aí as posições são obrigatórias e as funções estão no script
     display: none;
 }
 
+
+.campo-cards {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    position: relative;
+    width: 252px;
+    height: 116px;
+    border: 2px solid var(--border);
+    border-radius: 8px;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; */
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    background: var(--bg-color);
+}
+
+.card:hover {
+    border-color: var(--select);
+}
+
+.card input {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+.card .icon {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.card .text {
+    text-align: center;
+}
+
+/* Estilo para quando o input estiver marcado */
+.card input:checked + .icon,
+.card input:checked + .text {
+    color: #007bff;
+}
+
+.card input:checked {
+    accent-color: #007bff;
+}
+
+
+
+
+
+
+
+
+
+
 .botoes {
     display: flex;
-    flex-direction:row;
-    justify-content: flex-end;
-    gap: 24px;
+    flex-direction: row;
+    gap: 12px;
+    font-family: "Poppins", sans-serif;
+    justify-content: end;
 }
 
 .botao {
-    font-size: 1.2em;
-    background: #E43A12;
-    margin-bottom: 1em;
-    border: 1px solid #E43A12;
-    color: #ffffff;
-    padding: 0.2em 0.6em;
-    width: 169;
-    height: 48;
-    min-width: 120px;
+    display: block;
+    font-size: 16px;
+    background: var(--contrast);
+    border: 2px solid var(--contrast);
+    color: var(--bg-color);
+    padding: 12px 24px;
+    width: auto;
+    cursor: pointer;
     gap: 8px;
+}
+.botao:hover{
+    background: var(--hover-button);
+    border-color: var(--hover-button);
+
 }
 
 .botao__cancelar {
-    font-size: 1.2em;
-    background: none;
-    margin-bottom: 1em;
-    color: #E43A12;
-    border: 1px solid #E43A12;
-    padding: 0.2em 0.6em;
-    width: 123;
-    height: 48;
-    min-width: 120px;
-    gap: 8px;
+    background: var(--bg-color);
+    color: var(--contrast);
+    border-color: var(--contrast);
 }
-
-.botao:hover, .botao__cancelar:hover {
-    background: #f0c0c0;
-    color: #E43A12;
-    cursor: pointer;
+.botao__cancelar:hover {
+    background-color: var(--hover-button);
+    color: var(--bg-color);
+    border-color: var(--hover-button);
 }

@@ -1,23 +1,34 @@
-const uploadArea = document.getElementById("uploadArea");
-const fileInput = document.getElementById("fileInput");
+const uploadArea = document.querySelectorAll(".upload-area");
+const fileInput = document.querySelectorAll(".file-input");
 
-// Estilizar ao arrastar um arquivo sobre a área
-uploadArea.addEventListener("dragover", (event) => {
-    event.preventDefault();
-    uploadArea.classList.add("dragover");
-});
+function colorInUploadArea(areas, inputs) {
+    for (let i = 0; i < areas.length; i++) {
+        const area = areas[i];
+        const input = inputs[i];
 
-// Remover o efeito quando o arquivo sai da área
-uploadArea.addEventListener("dragleave", () => {
-    uploadArea.classList.remove("dragover");
-});
+        area.addEventListener("dragover", (event) => {
+            event.preventDefault();
+            area.classList.add("dragover");
+        });
+        
+        // Remover o efeito quando o arquivo sai da área
+        area.addEventListener("dragleave", () => {
+            area.classList.remove("dragover");
+        });
+        
+        // Processar o arquivo ao soltá-lo
+        area.addEventListener("drop", (event) => {
+            event.preventDefault();
+            area.classList.remove("dragover");
+        
+            // Capturar os arquivos arrastados
+            const files = event.dataTransfer.files;
+            input.files = files; // Adiciona os arquivos ao input
+        });
+    }
+}
 
-// Processar o arquivo ao soltá-lo
-uploadArea.addEventListener("drop", (event) => {
-    event.preventDefault();
-    uploadArea.classList.remove("dragover");
+colorInUploadArea(uploadArea, fileInput);
 
-    // Capturar os arquivos arrastados
-    const files = event.dataTransfer.files;
-    fileInput.files = files; // Adiciona os arquivos ao input
-});
+console.log(uploadArea);
+console.log(fileInput);
