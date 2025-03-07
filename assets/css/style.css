@@ -197,6 +197,16 @@ aí as posições são obrigatórias e as funções estão no script
     display: none;
 }
 
+.campo input[type = "checkbox"] {
+    width: 20px; 
+    height: 14px;   
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    text-decoration: none;
+    box-shadow: none;
+    
+}
 
 .campo-cards {
     display: flex;
@@ -251,13 +261,7 @@ aí as posições são obrigatórias e as funções estão no script
 }
 
 
-
-
-
-
-
-
-
+/* Estilo dos botões */
 
 .botoes {
     display: flex;
@@ -293,4 +297,8 @@ aí as posições são obrigatórias e as funções estão no script
     background-color: var(--hover-button);
     color: var(--bg-color);
     border-color: var(--hover-button);
+}
+
+a {
+    text-decoration: none;
 }
