@@ -42,7 +42,7 @@ body {
     top: 0;
     width: 50%;
     height: 100vh;
-    background-color: #2135A6;
+    background-color: #292524;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -57,6 +57,23 @@ body {
     max-width: 260px;
 }
 
+.navegacao{
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    padding: 0 6%;
+}
+
+.navegacao i, .navegacao a {
+    font-size: 16px;
+    gap: 12px;
+    color: var(--contrast);
+    text-decoration: none;
+}
+.navegacao a {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+}
 /* Estilo do formulário */
 .formulario-container {
     width: 50%;
@@ -120,7 +137,7 @@ body {
     color: var(--contrast);
 }
 
-input, select, button {
+input, select, button, textarea {
     border: 2px solid var(--border);
     border-radius: 8px;
     width: 100%; 
@@ -129,7 +146,7 @@ input, select, button {
     transition: all 0.3s ease-in-out;
 }
 
-.campo input:focus, .campo-endereco input:focus{
+.campo input:focus, .campo-endereco input:focus, .campo textarea:focus{
     border: 2px solid var(--select);
     outline: none;
     box-shadow: 0 0 1px 4px var(--shadow);
@@ -174,7 +191,27 @@ input, select, button {
     color: var(--upload);
     transition: all 0.3s ease-in-out;
 }
+.campo textarea {
+    width: 100%;
+    resize: none;
+    height: 150px;
+    border-radius: 8px;
+}
 
+textarea::placeholder {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    color: #999; 
+}
+span {
+    text-align: center;
+    text-align-last: center; 
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
 /* 
 Esse é o campo que vai nos permitir clicar ou arrastar as imagens
 aí as posições são obrigatórias e as funções estão no script
@@ -211,6 +248,8 @@ aí as posições são obrigatórias e as funções estão no script
 .campo-cards {
     display: flex;
     flex-wrap: wrap;
+    gap: 24px;
+    justify-content: center;
 }
 
 .card {
@@ -301,4 +340,74 @@ aí as posições são obrigatórias e as funções estão no script
 
 a {
     text-decoration: none;
+}
+
+/* Formatação da segunda página */
+.container__about {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+    height: 100vh;
+}
+
+.about {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.logo__jsf, .sobre-nos {
+    width: 50%;
+}
+
+.logo__jsf {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #292524;
+}
+
+.logo__jsf img {
+    max-width: 100%;
+    height: auto;
+}
+
+.sobre-nos{
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    padding: 6%;
+    overflow-y: auto;
+    gap: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgb(238, 226, 226); /* Teste de cor background */
+
+}
+
+.about__titulo {
+    margin-bottom: 20px;
+}
+.about__conteudo {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+    justify-content: center;
+    text-align: justify;
+}
+
+.about__header{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.about__conteudo strong{
+    color: #c1a01e;
 }
