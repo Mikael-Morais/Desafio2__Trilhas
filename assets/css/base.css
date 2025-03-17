@@ -1,0 +1,85 @@
+:root {
+    --main-color: #11111F;
+    --light-color: #FFFFFF;
+    --text-color1: #292524;
+    --text-color2: #57534E;
+    --border: #CCC;
+    --upload: #A8A29E;
+    --shadow: #FFF5CF;
+    --select: #C1A01E;
+    --contrast: #C1A01E;
+    --hover-button: #AB8E1D;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}    
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--main-color);
+    color: var(--text-color1); 
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+a, button {
+    text-decoration: none;
+    border: none;
+    outline: none;
+}
+
+
+.container {
+    display: none;
+    min-height: 100vh;
+    width: 100%;
+    flex: 0.5;
+    transition: flex 0.3s ease-in-out, background 0.3s ease-in-out;
+}
+.container .content {
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+}
+
+
+
+.container.right {
+    color: var(--light-color);
+    background: var(--main-color);
+    flex: 0.4;
+}
+
+.container.left {
+    flex: 0.6;
+    color: var(--text-color1);
+    background: var(--light-color);
+}
+
+
+.container.visible {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container.opacity .content {
+    opacity: 0;
+}
+
+
+.right.color {
+    background: var(--light-color);
+    color: var(--text-color1);
+    flex: 0.6;
+}
+.left.color {
+    flex: 0.4;
+    color: var(--light-color);
+    background: var(--main-color);
+}

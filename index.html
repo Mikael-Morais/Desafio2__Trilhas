@@ -6,177 +6,231 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
     <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./assets/css/base.css">
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
 <body>
-    <div class="container">
-        <div class="imagem">
-            <img src="./assets/img/Ilustration.svg" id="imagem__ilustracao" alt="Imagem">
-            <img src="./assets/img/logo.svg" id="imagem__logo__inova" alt="Logo">
-        </div>
-        <div class="formulario-container">
-            <div class="navegacao">
-                <nav>
-                    <a href="welcome.html"><i class="fas fa-arrow-left"></i> Voltar</a>
-                </nav>
+    <!-- Aplicação da estrutura de containters alternados -->
+    <body>
+        <div class="container left visible">
+            <div class="content">
+                <h1><div class="sobre-nos">
+                    <div class = "about__header">
+                        <div class="about__titulo">
+                            <h1>Sobre Nós</h1>
+                            <h4>Conheça um pouco mais sobre a nossa empresa.</h4>
+                        </div>
+                    </div>
+                    <div class = "about__conteudo">
+                        <p>
+                            A <strong>Js-F</strong> é uma empresa de tecnologia que tem como objetivo principal a inclusão digital de pessoas de todas as idades. 
+                            Acreditamos que a tecnologia é uma ferramenta poderosa para a transformação social e que todos devem ter acesso a ela.
+                        </p>
+                        <p>
+                            Nossos cursos são voltados para pessoas que estão iniciando na área de tecnologia e que desejam aprender mais sobre programação e desenvolvimento pessoal.
+                        </p>
+                        <p>
+                            <strong>Acreditamos que a educação é o caminho para a transformação e que todos devem ter acesso a ela. Por isso, nossos cursos são de excelente qualidade.</strong>
+                        </p>
+                        <nav>
+                            <button onclick="altern()"><i class="fas fa-user-plus"></i> Realizar Inscrição</button>
+                        </nav>
+                    </div>
+                </div></h1>
             </div>
-            <h1 id="titulo">Formulário de inscrição</h1>
-            <p id="subtitulo">Preencha os dados abaixo para fazer sua inscrição no Programa Js-F.</p>
-            <form class="formulario">
-                <fieldset class="informacoes__pessoais">
-                    <legend class="legenda">
-                        <h4>Informações do participante</h4>
-                    </legend>
-                    <div class="campo">
-                        <label for="nome">Nome completo</label>
-                        <input type="text" name="nome" id="nome" required>
-                    </div>
-
-                    <div class="campo">
-                        <label for="dataNascimento">Data de nascimento</label>
-                        <input type="date" name="dataNascimento" id="dataNascimento" required>
-                    </div>
-
-                    <div class="campo">
-                        <label for="cpf">CPF</label>
-                        <input type="text" name="cpf" id="cpf" required>
-                    </div>
-                    <div class="campo">
-                        <label for="sexo">Sexo</label>
-                        <select name="sexo" id="sexo" required>
-                            <option value="">Selecione</option>
-                            <option value="masculino">Masculino</option>
-                            <option value="feminino">Feminino</option>
-                            <option value="outro">Outro</option>
-                            <option value="prefiro_nao_dizer">Prefiro não dizer</option>
-                        </select>
-                    </div>
-                    <div class="campo">
-                        <label for="email">E-mail</label>
-                        <input type="email" name="email" id="email" required>
-                    </div>
-                    <div class="campo">
-                        <label for="telefone">Telefone</label>
-                        <input type="tel" name="telefone" id="telefone" required>
-                    </div>
-                    <div class="campo-arquivo campo">
-                        <label for="documentoIdentidade">Documento de identidade</label>
-                        <div class="upload-area" id="uploadArea">
-                            <input type="file" id="fileInput" class="file-input" multiple>
-                            <p>Clique aqui para selecionar o arquivo</p>
-                        </div>
-                    </div>
-                    <br>
-                </fieldset>
-
-                <fieldset class="endereco">
-                    <legend class="legenda">
-                        <h4>Endereço residencial</h4>
-                    </legend>
-                    <div class="campo">
-                        <label for="cep">CEP</label>
-                        <input type="text" name="cep" id="cep" required>
-                    </div>
-                    <div class="campo-endereco">
-                        <div class="campo1">
-                            <label for="rua">Rua</label>
-                            <input type="text" name="rua" id="rua" required>
-                        </div>
-                        <div class="campo2">
-                            <label for="numero">Número</label>
-                            <input type="text" name="numero" id="numero" required>
-                        </div>
-                    </div>
-                    <div class="campo-endereco">
-                        <div class="campo1">
-                            <label for="cidade">Cidade</label>
-                            <input type="text" name="cidade" id="cidade" required>
-                        </div>
-                        <div class="campo2">
-                            <label for="estado">Estado</label>
-                            <input type="text" name="estado" id="estado" required>
-                        </div>
-                    </div>
-                    <div class="campo-arquivo campo">
-                        <label for="comprovanteResidencia">Comprovante de Residência</label>
-                        <div class="upload-area" id="uploadArea">
-                            <input type="file" id="fileInput" class="file-input" multiple>
-                            <p>Clique aqui para selecionar o arquivo</p>
-                        </div>
-                    </div>
-                </fieldset>
-                <br>
-                <fieldset class="trilhas">
-                    <legend class="legenda">
-                        <h4>Informações acadêmicas</h4>
-                    </legend>
-                    <div class = "campo">
-                        <label for="instituicao">Instituição de ensino</label>
-                        <input type="text" name="instituicao" id="instituicao" required>
-                    </div>
-                    <div class = "campo">
-                        <label for="curso">Curso</label>
-                        <input type="text" name="curso" id="curso" required>
-                    </div>
-                    <div class = "campo">
-                        <label for="cartainteresse">Carta de interesse</label>
-                        <textarea name="cartainteresse" id="cartainteresse" placeholder="Por que gostaria de participar do programa Js-f" required></textarea>
-                    </div>
-                    <fieldset class="trilhas">
-                        <legend class="legenda">
-                            <h4>Selecione a área de interesse</h4>
-                        </legend>
-                        <div class="campo-cards">
-                            <label class="card" for="frontend">
-                                <input type="radio" name="trilha" id="frontend" value="frontend">
-                                <span class="icon">🖥️</span>
-                                <span class="text">Programação Front-end</span>
-                            </label>
-                            <label class="card" for="backend">
-                                <input type="radio" name="trilha" id="backend" value="backend">
-                                <span class="icon">⚙️</span>
-                                <span class="text">Programação Back-end</span>
-                            </label>
-                            <label class="card" for="jogos">
-                                <input type="radio" name="trilha" id="jogos" value="jogos">
-                                <span class="icon">🎮</span>
-                                <span class="text">Programação de Jogos</span>
-                            </label>
-                            <label class="card" for="ux">
-                                <input type="radio" name="trilha" id="ux" value="ux">
-                                <span class="icon">🎨</span>
-                                <span class="text">Design e Experiência</span>
-                            </label>
-                            <label class="card" for="dados">
-                                <input type="radio" name="trilha" id="dados" value="dados">
-                                <span class="icon">📊</span>
-                                <span class="text">Ciência de Dados</span>
-                            </label>
-                            <label class="card" for="cybersecurity">
-                                <input type="radio" name="trilha" id="cybersecurity" value="cybersecurity">
-                                <span class="icon">🪪</span>
-                                <span class="text">Cyber Segurança</span>
-                            </label>
-                        </div>
-                    </fieldset>
-                </fieldset>
-                <br>
-                <div class="campo">
-                    <label for="termos">
-                        <input type="checkbox" name="termos" id="termos" required> Declaro que li e concordo com os <a
-                            href="#">termos de condições</a> e com as <a href="#">políticas de privacidade</a>.
-                    </label>
-                </div>
-                <div class="botoes">
-                    <button class="botao botao__cancelar" type="reset">Cancelar</button>
-                    <button class="botao" type="submit">Fazer inscrição</button>
-                </div>
-            </form>
         </div>
-    </div>
+        
+        <!-- Containers das imagens -->
+        <div class="container left">
+            <div class="content images">
+                <img class="image" src="assets/img/mulher.png " alt="">
+                <div class="logo">
+                    <img src="assets/img/icone-light.png" alt="">
+                    <h1>JOVEM SEM FRONTEIRA</h1>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container right visible">
+            <div class="content images">
+                <div class="logo max">
+                    <img src="assets/img/icone-light.png" alt="">
+                    <h1>JOVEM SEM FRONTEIRA</h1>
+                </div>
+            </div>
+        </div>
+        <!-- Fim dos containers -->
 
+        <div class="container right">
+            <div class="content">
+                <div class="formulario-container">
+                    <div class="navegacao">
+                        <nav>
+                            <button type="button" onclick="altern()"><i class="fas fa-arrow-left"></i> Voltar</button>
+                        </nav>
+                    </div>
+                    <h1 id="titulo">Formulário de inscrição</h1>
+                    <p id="subtitulo">Preencha os dados abaixo para fazer sua inscrição no Programa Js-F.</p>
+                    <form class="formulario">
+                        <fieldset class="informacoes__pessoais">
+                            <legend class="legenda">
+                                <h4>Informações do participante</h4>
+                            </legend>
+                            <div class="campo">
+                                <label for="nome">Nome completo</label>
+                                <input type="text" name="nome" id="nome" required>
+                            </div>
+                            
+                            <div class="campo">
+                                <label for="dataNascimento">Data de nascimento</label>
+                                <input type="date" name="dataNascimento" id="dataNascimento" required>
+                            </div>
+                            
+                            <div class="campo">
+                                <label for="cpf">CPF</label>
+                                <input type="text" name="cpf" id="cpf" required>
+                            </div>
+                            <div class="campo">
+                                <label for="sexo">Sexo</label>
+                                <select name="sexo" id="sexo" required>
+                                    <option value="">Selecione</option>
+                                    <option value="masculino">Masculino</option>
+                                    <option value="feminino">Feminino</option>
+                                    <option value="outro">Outro</option>
+                                    <option value="prefiro_nao_dizer">Prefiro não dizer</option>
+                                </select>
+                            </div>
+                            <div class="campo">
+                                <label for="email">E-mail</label>
+                                <input type="email" name="email" id="email" required>
+                            </div>
+                            <div class="campo">
+                                <label for="telefone">Telefone</label>
+                                <input type="tel" name="telefone" id="telefone" required>
+                            </div>
+                            <div class="campo-arquivo campo">
+                                <label for="documentoIdentidade">Documento de identidade</label>
+                                <div class="upload-area" id="uploadArea">
+                                    <input type="file" id="fileInput" class="file-input" multiple>
+                                    <img src="assets/img/icones/cloud-upload.svg" alt="imagem upload na nuvem" class="upload-img">
+                                    <p>Clique aqui para selecionar o arquivo</p>
+                                </div>
+                            </div>
+                            <br>
+                        </fieldset>
+                        
+                        <fieldset class="endereco">
+                            <legend class="legenda">
+                                <h4>Endereço residencial</h4>
+                            </legend>
+                            <div class="campo">
+                                <label for="cep">CEP</label>
+                                <input type="text" name="cep" id="cep" required>
+                            </div>
+                            <div class="campo-endereco">
+                                <div class="campo1">
+                                    <label for="rua">Rua</label>
+                                    <input type="text" name="rua" id="rua" required>
+                                </div>
+                                <div class="campo2">
+                                    <label for="numero">Número</label>
+                                    <input type="text" name="numero" id="numero" required>
+                                </div>
+                            </div>
+                            <div class="campo-endereco">
+                                <div class="campo1">
+                                    <label for="cidade">Cidade</label>
+                                    <input type="text" name="cidade" id="cidade" required>
+                                </div>
+                                <div class="campo2">
+                                    <label for="estado">Estado</label>
+                                    <input type="text" name="estado" id="estado" required>
+                                </div>
+                            </div>
+                            <div class="campo-arquivo campo">
+                                <label for="comprovanteResidencia">Comprovante de Residência</label>
+                                <div class="upload-area" id="uploadArea">
+                                    <input type="file" id="fileInput" class="file-input" multiple>
+                                    <img src="assets/img/icones/cloud-upload.svg" alt="imagem upload na nuvem" class="upload-img">
+                                    <p>Clique aqui para selecionar o arquivo</p>
+                                </div>
+                            </div>
+                        </fieldset>
+                        <br>
+                        <fieldset class="trilhas">
+                            <legend class="legenda">
+                                <h4>Informações acadêmicas</h4>
+                            </legend>
+                            <div class = "campo">
+                                <label for="instituicao">Instituição de ensino</label>
+                                <input type="text" name="instituicao" id="instituicao" required>
+                            </div>
+                            <div class = "campo">
+                                <label for="curso">Curso</label>
+                                <input type="text" name="curso" id="curso" required>
+                            </div>
+                            <div class = "campo">
+                                <label for="cartainteresse">Carta de interesse</label>
+                                <textarea name="cartainteresse" id="cartainteresse" placeholder="Por que gostaria de participar do programa Js-f" required></textarea>
+                            </div>
+                            <fieldset class="trilhas">
+                                <legend class="legenda">
+                                    <h4>Selecione a área de interesse</h4>
+                                </legend>
+                                <div class="campo-cards">
+                                    <label class="card" for="frontend">
+                                        <input type="radio" name="trilha" id="frontend" value="frontend">
+                                        <img src="assets/img/icones/front-end.svg" alt="" class="icon">
+                                        <span class="text">Programação Front-end</span>
+                                    </label>
+                                    <label class="card" for="backend">
+                                        <input type="radio" name="trilha" id="backend" value="backend">
+                                        <img src="assets/img/icones/back-end.svg" alt="" class="icon">
+                                        <span class="text">Programação Back-end</span>
+                                    </label>
+                                    <label class="card" for="jogos">
+                                        <input type="radio" name="trilha" id="jogos" value="jogos">
+                                        <img src="assets/img/icones/jogos.svg" alt="" class="icon">
+                                        <span class="text">Programação de Jogos</span>
+                                    </label>
+                                    <label class="card" for="ux">
+                                        <input type="radio" name="trilha" id="ux" value="ux">
+                                        <img src="assets/img/icones/ux.svg" alt="" class="icon">
+                                        <span class="text">Design e Experiência</span>
+                                    </label>
+                                    <label class="card" for="dados">
+                                        <input type="radio" name="trilha" id="dados" value="dados">
+                                        <img src="assets/img/icones/dados.svg" alt="" class="icon">
+                                        <span class="text">Ciência de Dados</span>
+                                    </label>
+                                    <label class="card" for="cybersecurity">
+                                        <input type="radio" name="trilha" id="cybersecurity" value="cybersecurity">
+                                        <img src="assets/img/icones/cloud-upload.svg" alt="" class="icon">
+                                        <span class="text">Cyber Segurança</span>
+                                    </label>
+                                </div>
+                            </fieldset>
+                        </fieldset>
+                        <br>
+                        <div class="campo">
+                            <label for="termos" class="termos">
+                                <input type="checkbox" name="termos" id="termos" required> Declaro que li e concordo com os <a
+                                href="#">termos de condições</a> e com as <a href="#">políticas de privacidade</a>.
+                            </label>
+                        </div>
+                        <div class="botoes">
+                            <button onclick="altern()" class="botao botao__cancelar" type="reset">Cancelar</button>
+                            <button class="botao" type="submit">Fazer inscrição</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <script src="assets/js/toggle-content.js"></script>
+    </body>
     <script src="assets/js/upload-area.js"></script>
 </body>
 

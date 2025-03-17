@@ -7,76 +7,61 @@
     box-sizing: border-box;
 }
 
-:root {
-    --bg-color: #FFFFFF;
+/* :root {
+    --main-color: #11111F;
+    --light-color: #FFFFFF;
     --text-color1: #292524;
     --text-color2: #57534E;
-    --border: #D6D3D1;
+    --border: #CCC;
     --upload: #A8A29E;
-    --shadow: #FEE7D6;
-    --select: #F3541C;
-    --contrast: #E43A12;
-    --hover-button: #b0290a;
-}
+    --shadow: #FFF5CF;
+    --select: #C1A01E;
+    --contrast: #C1A01E;
+    --hover-button: #AB8E1D;
+} */
 
-body {
-    background-color: var(--bg-color);
-    color: var(--text-color1); 
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    height: 100vh;
-    overflow-x: hidden;
-}
 
-/* Contêiner principal */
-.container {
-    display: flex;
-    flex-direction: row-reverse;
-    width: 100%;
-}
-
-/* Estilo da imagem */
-.imagem {
-    position: sticky; /* Inicia como relativo dps fica fixo */
-    top: 0;
-    width: 50%;
-    height: 100vh;
-    background-color: #292524;
+/* ESTIO DA PRIMEIRA ABA - SOBRE NÓS */
+.sobre-nos{
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    padding: 6%;
+    overflow-y: auto;
+    gap: 12px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    
-}
-#imagem__ilustracao {
-    margin-bottom: 80px;
-}
-#imagem__logo__inova {
-    max-width: 260px;
 }
 
-.navegacao{
+.about__titulo {
+    margin-bottom: 20px;
+}
+.about__conteudo {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     gap: 12px;
-    padding: 0 6%;
+    justify-content: center;
+    text-align: left;
 }
 
-.navegacao i, .navegacao a {
-    font-size: 16px;
+.about__header{
+    display: flex;
+    flex-direction: column;
     gap: 12px;
-    color: var(--contrast);
-    text-decoration: none;
+    align-items: flex-start;
+    justify-content: flex-start;
 }
-.navegacao a {
-    font-family: "Poppins", sans-serif;
-    font-weight: 500;
+
+.about__conteudo strong{
+    color: #c1a01e;
 }
-/* Estilo do formulário */
+
+
+
+/* ESTILO DA SEGUNDA ABA - INSCRIÇÃO */
 .formulario-container {
-    width: 50%;
+    width: 100%;
     height: 100vh; /* Garante que o formulário role na altura da tela */
     overflow-y: auto; /* Habilita o scroll apenas no formulário */
     padding: 2%;
@@ -115,7 +100,7 @@ body {
 .informacoes__pessoais, .endereco, .trilhas {
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 22px;
     border: none;
 }
 
@@ -127,7 +112,7 @@ body {
 }
 
 .campo label {
-    margin-bottom: 0.5em;
+    margin-bottom: 0.45em;
     display: block;
     color: var(--text-color2);
 }
@@ -143,13 +128,13 @@ input, select, button, textarea {
     width: 100%; 
     padding: 0.9em; 
     font-size: 16px;
-    transition: all 0.3s ease-in-out;
+    transition: border-color 0.3s ease-in-out;
 }
 
 .campo input:focus, .campo-endereco input:focus, .campo textarea:focus{
     border: 2px solid var(--select);
     outline: none;
-    box-shadow: 0 0 1px 4px var(--shadow);
+    box-shadow: 0 0 1px 3px var(--shadow);
 }
 
 .campo-endereco {
@@ -158,6 +143,7 @@ input, select, button, textarea {
     display: flex;
     width: 100%;
     gap: 24px;
+    font-size: 14px;
 }
 .campo-endereco .campo1 {
     flex: 0.60;
@@ -179,7 +165,7 @@ input, select, button, textarea {
 .campo-arquivo .upload-area {
     width: 100%;
     height: 150px;
-    border: 2px dashed #ccc;
+    border: 2px dashed var(--border);
     border-radius: 10px;
     text-align: center;
     padding: 20px;
@@ -189,7 +175,7 @@ input, select, button, textarea {
     align-items: center;
     justify-content: center;
     color: var(--upload);
-    transition: all 0.3s ease-in-out;
+    transition: border-color 0.3s ease-in-out;
 }
 .campo textarea {
     width: 100%;
@@ -230,6 +216,16 @@ aí as posições são obrigatórias e as funções estão no script
 }
 
 
+.upload-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.upload-area .upload-img {
+    width: 50px;
+}
+
+
 .campo-arquivo input::-webkit-file-upload-button {
     display: none;
 }
@@ -254,60 +250,69 @@ aí as posições são obrigatórias e as funções estão no script
 
 .card {
     position: relative;
-    width: 252px;
-    height: 116px;
+    width: 350px;
+    height: 140px;
     border: 2px solid var(--border);
     border-radius: 8px;
-    /* display: flex;
+    display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center; */
-    font-size: 16px;
+    align-items: center;
+    font-size: 14px;
     cursor: pointer;
-    transition: all 0.3s ease-in-out;
-    background: var(--bg-color);
+    transition: border-color 0.3s ease-in-out;
+    background: var(--light-color);
+    text-align: center;
+    padding: 16px;
 }
 
 .card:hover {
     border-color: var(--select);
 }
 
+/* Posicionando o input no canto superior esquerdo */
 .card input {
     position: absolute;
     top: 8px;
     left: 8px;
     transform: scale(1.2);
     cursor: pointer;
+    width: auto;
 }
 
+/* Centralizando ícone e texto */
 .card .icon {
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
 }
 
 .card .text {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-color2);
     text-align: center;
 }
 
-/* Estilo para quando o input estiver marcado */
-.card input:checked + .icon,
-.card input:checked + .text {
-    color: #007bff;
+/* Quando o input dentro do card estiver checado, o card muda de estilo */
+.card:has(input:checked) {
+    border-color: var(--select);
 }
-
+.card:has(input:checked) .icon,
+.card:has(input:checked) .text {
+    color: var(--select);
+}
 .card input:checked {
-    accent-color: #007bff;
+    accent-color: var(--select);
 }
 
 
-/* Estilo dos botões */
-
+/* Estilo dos botões finais*/
 .botoes {
     display: flex;
     flex-direction: row;
     gap: 12px;
     font-family: "Poppins", sans-serif;
     justify-content: end;
+    margin-top: 30px;
 }
 
 .botao {
@@ -315,99 +320,118 @@ aí as posições são obrigatórias e as funções estão no script
     font-size: 16px;
     background: var(--contrast);
     border: 2px solid var(--contrast);
-    color: var(--bg-color);
+    color: var(--light-color);
     padding: 12px 24px;
     width: auto;
     cursor: pointer;
     gap: 8px;
+    transition: 0.3s;
 }
 .botao:hover{
     background: var(--hover-button);
     border-color: var(--hover-button);
-
 }
 
 .botao__cancelar {
-    background: var(--bg-color);
+    background: var(--light-color);
     color: var(--contrast);
     border-color: var(--contrast);
 }
 .botao__cancelar:hover {
     background-color: var(--hover-button);
-    color: var(--bg-color);
+    color: var(--light-color);
     border-color: var(--hover-button);
 }
 
-a {
-    text-decoration: none;
+
+.campo .termos {
+    margin-top: 20px;
+}
+.campo .termos a {
+    text-decoration: underline;
+    color: var(--contrast);
+}
+.campo .termos input {
+    cursor: pointer;
+}
+.campo .termos input:checked {
+    accent-color: var(--select);
 }
 
-/* Formatação da segunda página */
-.container__about {
+
+
+/* Estilo da barra de navegação dos botões "voltar" e "inscrever */
+.navegacao{
     display: flex;
-    flex-direction: column;
-    gap: 24px;
-    width: 100%;
-    height: 100vh;
+    flex-direction: row;
+    gap: 12px;
+    padding: 0 6%;
 }
 
-.about {
-    display: flex;
-    width: 100%;
-    height: 100%;
-}
-
-.logo__jsf, .sobre-nos {
-    width: 50%;
-}
-
-.logo__jsf {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #292524;
-}
-
-.logo__jsf img {
-    max-width: 100%;
-    height: auto;
-}
-
-.sobre-nos{
-    font-family: "Poppins", sans-serif;
-    font-weight: 400;
+.navegacao i, .navegacao button {
     font-size: 16px;
-    padding: 6%;
-    overflow-y: auto;
     gap: 12px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background-color: rgb(238, 226, 226); /* Teste de cor background */
-
+    color: var(--contrast);
+    background-color: transparent;
+}
+.navegacao button, .about__conteudo button {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    border: none;
+    padding: 0.9em 0;
+    cursor: pointer;
 }
 
-.about__titulo {
-    margin-bottom: 20px;
+.about__conteudo button {
+    background-color: var(--contrast);
+    color: var(--light-color);
+    margin-top: 20px;
+    font-weight: 600;
+    width: auto;
+    padding: 8.5px 13px;
+    /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); */
 }
-.about__conteudo {
+.about__conteudo button:hover {
+    background-color: var(--hover-button);
+}
+
+
+
+/* Estilização das imagens */
+.content.images {
     display: flex;
-    flex-direction: column;
-    gap: 12px;
     align-items: center;
-    justify-content: center;
-    text-align: justify;
-}
-
-.about__header{
-    display: flex;
     flex-direction: column;
-    gap: 12px;
-    align-items: flex-start;
-    justify-content: flex-start;
+    gap: 30px;
+}
+.content.images .image {
+    max-width: 85%;
+    border-radius: 40%; 
 }
 
-.about__conteudo strong{
-    color: #c1a01e;
+.logo {
+    display: flex;
+    align-items: center;
+}
+.logo img {
+    width: 100%;
+    max-width: 75px;
+}
+.logo h1 {
+    font-size: 30px;
+    text-align: center;
+    max-width: 200px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding: 10px;
+}
+
+.logo.max {
+    flex-direction: column;
+}
+.logo.max h1{
+    font-size: 40px;
+    max-width: 300px;
+}
+.logo.max img {
+    max-width: 200px;
 }
