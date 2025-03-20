@@ -7,20 +7,6 @@
     box-sizing: border-box;
 }
 
-/* :root {
-    --main-color: #11111F;
-    --light-color: #FFFFFF;
-    --text-color1: #292524;
-    --text-color2: #57534E;
-    --border: #CCC;
-    --upload: #A8A29E;
-    --shadow: #FFF5CF;
-    --select: #C1A01E;
-    --contrast: #C1A01E;
-    --hover-button: #AB8E1D;
-} */
-
-
 /* ESTIO DA PRIMEIRA ABA - SOBRE NÓS */
 .sobre-nos{
     font-family: "Poppins", sans-serif;
@@ -152,7 +138,6 @@ input, select, button, textarea {
     flex: 0.40;
 }
 
-/* Essa parte aqui é pra esconder o input original */
 .campo-arquivo input[type="file"] {
     opacity: 0;
     position: absolute;
@@ -161,7 +146,6 @@ input, select, button, textarea {
     cursor: pointer;
 }
 
-/* Aqui se cria uma nova área customizada de formulário pros arquivos */
 .campo-arquivo .upload-area {
     width: 100%;
     height: 150px;
@@ -198,6 +182,7 @@ span {
     align-items: center;
     display: flex;
 }
+
 /* 
 Esse é o campo que vai nos permitir clicar ou arrastar as imagens
 aí as posições são obrigatórias e as funções estão no script
@@ -284,6 +269,7 @@ aí as posições são obrigatórias e as funções estão no script
 .card .icon {
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
+    max-width: 40px;
 }
 
 .card .text {
@@ -292,7 +278,6 @@ aí as posições são obrigatórias e as funções estão no script
     text-align: center;
 }
 
-/* Quando o input dentro do card estiver checado, o card muda de estilo */
 .card:has(input:checked) {
     border-color: var(--select);
 }
