@@ -420,3 +420,50 @@ aí as posições são obrigatórias e as funções estão no script
 .logo.max img {
     max-width: 200px;
 }
+
+
+@media (max-width: 1450px) {
+    .card {
+        width: 48%;
+        height: 140px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .card {
+        width: 100%;
+    }
+}
+
+@media (max-width: 850px) {
+    body {
+        flex-direction: column;
+    }
+    .container {
+        display: none;
+        min-height: auto;
+        transition: flex 0.3s ease-in-out, background 0.3s ease-in-out;
+    }    
+    
+    .container.right {
+        flex: 0;
+        background: var(--light-color);
+    }
+    .container.left {
+        flex: 1;
+    }
+
+    
+    .right.color {
+        flex: 1;
+    }
+    .left.color {
+        background: var(--light-color);
+        flex: 0;
+    }
+
+    .content.images div, .content.images img {
+        display: none;
+        height: 0;
+    }
+}
