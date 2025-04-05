@@ -21,7 +21,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--main-color);
+    background-color: var(--light-color);
     color: var(--text-color1); 
     height: 100vh;
     overflow-x: hidden;
