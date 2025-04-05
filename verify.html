@@ -6,22 +6,29 @@
         <title>Verificação de Dados</title>
         <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
         <link rel="stylesheet" href="./assets/css/base.css">
-        <link rel="stylesheet" href="./assets/css/style.css">
+        <link rel="stylesheet" href="./assets/css/verify-style.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     </head>
 <body>
-    <section id="verificacao-dados">
+    <section id="verificacao-dados" class="section-view"">
         <header>
-            <h1>Dados cadastrados com sucesso</h1>
-            <h1>Dados do Usuário</h1>
+            <h1 id="titulo">Dados de inscrição</h1>
+            <p id="subtitulo">Por favor, verifique seus dados antes de continuar a inscrição!</p>
         </header>
         <div id="dados-usuario">
             <!-- Os dados serão inseridos aqui -->
         </div>
-        <div>
-            <button onclick="window.location.href='index.html';">Voltar</button>
-            <button onclick="clearData()">Limpar Dados-Usuario</button>
+        <div class="botoes-inscricao">
+            <div class="botoes-verificacao">
+                <button class="botao editar" onclick="window.location.href='index.html';">Editar</button>
+                <button class="botao cancelar" onclick="clearData()">Cancelar</button>
+            </div>
+            <button class="botao continuar" onclick="verify_altern()">Continuar</button>
         </div>
+    </section>
+    
+    <section id="login-dados" class="section-view"">
+
     </section>
     <script src="assets/js/verify.js"></script>
 </body>

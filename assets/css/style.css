@@ -306,11 +306,12 @@ aí as posições são obrigatórias e as funções estão no script
     background: var(--contrast);
     border: 2px solid var(--contrast);
     color: var(--light-color);
-    padding: 12px 24px;
+    padding: 10px 20px;
     width: auto;
     cursor: pointer;
     gap: 8px;
-    transition: 0.3s;
+    transition: background 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    border-radius: 4px;
 }
 .botao:hover{
     background: var(--hover-button);
@@ -374,7 +375,7 @@ aí as posições são obrigatórias e as funções estão no script
     font-weight: 600;
     width: auto;
     padding: 8.5px 13px;
-    /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); */
+    border-radius: 4px;
 }
 .about__conteudo button:hover {
     background-color: var(--hover-button);

@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap');
+
+
+/* :root {
+    --main-color: #11111F;
+    --light-color: #FFFFFF;
+    --text-color1: #292524;
+    --text-color2: #57534E;
+    --border: #CCC;
+    --upload: #A8A29E;
+    --shadow: #FFF5CF;
+    --select: #C1A01E;
+    --contrast: #C1A01E;
+    --hover-button: #806600;
+} */
+
+body {
+    background: linear-gradient(45deg ,var(--light-color) 55%, var(--main-color) 55%);
+}
+
+#verificacao-dados {
+    padding: 25px;
+    background: var(--light-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    margin: 20px;
+}
+
+h1, p{
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+}
+button {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}
+
+header {
+    margin-bottom: 20px;
+}
+
+#titulo {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    font-style: normal;
+}
+
+#subtitulo {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+#dados-usuario {
+    margin-bottom: 20px;
+}
+#dados-usuario p {
+    margin-bottom: 3px;
+}
+
+.botoes-inscricao {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.botoes-verificacao {
+    width: 100%;
+    display: flex;
+    gap: 8px;
+}
+
+.botao {
+    display: block;
+    font-size: 16px;
+    padding: 10px 20px;
+    width: auto;
+    cursor: pointer;
+    border-radius: 4px;
+    background: var(--contrast);
+    border: 2px solid var(--contrast);
+    color: var(--light-color);
+    transition: background 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+.botao:hover{
+    background: var(--hover-button);
+    border-color: var(--hover-button);
+}
+
+.botao.cancelar, .botao.editar {
+    background: var(--light-color);
+    color: var(--contrast);
+    border-color: var(--contrast);
+}
+.botao.cancelar:hover, .botao.editar:hover {
+    background-color: var(--hover-button);
+    color: var(--light-color);
+    border-color: var(--hover-button);
+}
+
+@media (max-width: 450px) {
+    .botoes-inscricao {
+        flex-direction: column;
+        gap: 8px;
+    }
+    .botao {
+        width: 100%;
+    }
+}
