@@ -24,3 +24,30 @@ function clear() {
     localStorage.removeItem("information");
     window.location.href = "index.html";
 }
+
+let section_view = document.querySelectorAll(".section-view");
+
+function verify_altern() {
+    for (let i = 0; i < section_view.length; i++) {
+        const section = section_view[i];
+        const body = document.querySelector(".body");
+        if (section.classList.contains("opacity") == false){
+            section.classList.toggle("opacity");
+        };
+        setTimeout(() => {
+            section.classList.toggle("visible");
+            if (i!=0) {
+                body.classList.toggle("opacity");
+                setTimeout(() => {
+                    body.classList.toggle("color");
+                    body.classList.toggle("opacity");
+                }, 300);
+            }
+            setTimeout(() => {
+                if (section.classList.contains("opacity")){
+                    section.classList.toggle("opacity");
+                };
+            }, 300);
+        }, 300);
+    }
+}
