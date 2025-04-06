@@ -12,29 +12,18 @@
     </head>
 <body>
     <div class="body__login">
-        <section id="user">
-            <form class="formulario">
-                <div class="input-group campo" >
-                    <label for="user">Usuário</label>
-                    <input type="text" id="userCpf" name="userCpf" disabled required>
-                </div>
-                <div class="input-group campo">
-                    <label for="password">Senha</label>
-                    <input type="password" id="password" name="password" required>
-                </div>
-                <div class="input-group campo">
-                    <label for="confirm-password">Confirmar Senha</label>
-                    <input type="password" id="confirm-password" name="confirm-password" required>
-                    <br><br>
-                </div>
-                
-                <div class = "botoes">
-                    <button class="botao editar" onclick="window.location.href='verify.html';">Voltar</button>
-                    <button class="botao continuar" type="submit">Finalizar Inscrição</button>
-                </div>
-            </form>
-        </section>
-        
+       <div class="usuario">
+        <label for="usuario">Usuário</label>
+        <input type="text" id="usuario" name="usuario" required>
+       </div>
+       <div>
+        <label for="senha">Senha</label>
+        <input type="password" id="senha" name="senha" required>
+       </div>
+       <div class="botoes">
+        <button class="botao editar" onclick="window.location.href = 'verify.html';">Voltar</button>
+        <button class = "botao enviar" type="submit" onclick="verify()">Enviar</button>
+       </div>
     </div>
     <script src="assets/js/createUser.js"></script>
 </body>

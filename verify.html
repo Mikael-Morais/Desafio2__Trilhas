@@ -7,6 +7,7 @@
         <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
         <link rel="stylesheet" href="./assets/css/base.css">
         <link rel="stylesheet" href="./assets/css/verify-style.css">
+        <link rel="stylesheet" href="./assets/css/style.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     </head>
 <body>
@@ -31,18 +32,35 @@
         <section id="login-dados" class="section-view opacity">
             <header>
                 <h1 id="titulo">Criação de Usuário</h1>
-                <p id="subtitulo">Para finalizar a Inscrição, crie seu Usuário</p>
+                <p id="subtitulo">Para finalizar a Inscrição, crie sua Senha</p>
             </header>
-            <br><br><br><br>
-            <div class="botoes-inscricao">
-                <div class="botoes-verificacao">
-                    <button class="botao editar" onclick="verify_altern()">Voltar</button>
-                    <button class="botao continuar"  onclick="window.location.href='login.html';">Finalizar</button>
-                </div>
-                <p></p>
+            <div>
+                <form class="formulario">
+                    <div class="input-group campo" >
+                        <label for="user">Usuário</label>
+                        <input type="text" id="userCpf" name="userCpf" disabled required>
+                    </div>
+                    <div class="input-group campo">
+                        <label for="password">Senha</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <div class="input-group campo">
+                        <label for="confirm-password">Confirmar Senha</label>
+                        <input type="password" id="confirm-password" name="confirm-password" required>
+                        <br><br>
+                    </div>
+                    <div class="botoes-inscricao">
+                        <div class="botoes-verificacao">
+                            <button class="botao editar" onclick="verify_altern()">Voltar</button>
+                            <button class="botao continuar" type="submit">Finalizar</button>
+                        </div>
+                        <p></p>
+                    </div>
+                </form>
             </div>
+            
         </section>
-       
+        <script src="assets/js/createUser.js"></script>
         <script src="assets/js/verify.js"></script>
     </div>
 </body>

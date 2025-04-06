@@ -19,7 +19,25 @@ document.querySelector(".formulario").addEventListener("submit", function (event
         alert("As senhas não coincidem. Tente novamente.");
         return;
     }
-    
-    alert(`Inscrição finalizada com sucesso, ${savedInformation.nome}!`);
+    window.location.href='login.html';
+    //alert(`Inscrição finalizada com sucesso, ${savedInformation.nome}!`);
     //localStorage.removeItem("information");
+
+    const login = {
+        user: savedInformation.cpf,
+        senha: document.querySelector("#password").value,
+    };
+    localStorage.setItem("login", JSON.stringify(login));
 });    
+
+function verify() {
+    const dataSaved = JSON.parse(localStorage.getItem("login"));
+    const usuario = document.querySelector("#usuario").value;
+    const sen = document.querySelector("#senha").value;
+    if (usuario === dataSaved.user && sen === dataSaved.senha) {
+        alert("Login realizado com sucesso!");
+        window.location.href = "final.html";
+    } else {
+        alert("Usuário ou senha incorretos. Tente novamente.");
+    }
+}
