@@ -20,10 +20,11 @@ window.addEventListener("load", function() {
     }
 });
 
-function clear() {
-    localStorage.removeItem("information");
+let but_cancel = document.querySelector('.cancelar');
+but_cancel.addEventListener("click", function () {
     window.location.href = "index.html";
-}
+    localStorage.removeItem("information");
+})
 
 let section_view = document.querySelectorAll(".section-view");
 
@@ -49,5 +50,14 @@ function verify_altern() {
                 };
             }, 300);
         }, 300);
+    }
+    
+    if (JSON.parse(localStorage.getItem("login")) !== null) {
+        let cpf_page = JSON.parse(localStorage.getItem("information")).cpf
+        let user_page = JSON.parse(localStorage.getItem("login")).user
+
+        if (cpf_page == user_page) {
+            window.location.href='login.html';
+        }
     }
 }

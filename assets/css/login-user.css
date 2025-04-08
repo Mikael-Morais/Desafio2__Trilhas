@@ -1,0 +1,126 @@
+body {
+    font-family: "Poppins";
+    background: linear-gradient(-45deg, var(--main-color), #202047);
+    gap: 10px;
+}
+
+.body__main {
+    display: flex;
+    align-items: center;
+    color: var(--text-color1);
+    overflow-x: hidden;
+    font-family: "Poppins";
+}
+
+:root {
+    --main-color: #11111F;
+    --light-color: #FFFFFF;
+    --text-color1: #292524;
+    --text-color2: #57534E;
+    --border: #CCC;
+    --upload: #A8A29E;
+    --shadow: #FFF5CF;
+    --select: #C1A01E;
+    --contrast: #C1A01E;
+    --hover-button: #806600;
+}
+
+#titulo {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    font-style: normal;
+    padding: 3% 6% 0 6%;
+    margin-bottom: 20px;
+}
+
+.body__login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: opacity 0.3s ease;
+    padding: 20px;
+    background-color: var(--light-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    flex: 1;
+    width: 350px;
+}
+
+.usuario, .senha {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.body__login label {
+    margin-bottom: 0.40em;
+    display: block;
+    color: var(--text-color2);
+}
+.body__login input {
+    border: 2px solid var(--border);
+    border-radius: 8px;
+    width: 100%; 
+    padding: 0.5em; 
+    font-size: 16px;
+    transition: border-color 0.3s ease-in-out;
+}
+
+.body__login input:focus {
+    border: 2px solid var(--select);
+    outline: none;
+    box-shadow: 0 0 1px 3px var(--shadow);
+}
+
+.botoes {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.botao {
+    display: block;
+    font-size: 16px;
+    padding: 10px 20px;
+    width: auto;
+    cursor: pointer;
+    border-radius: 4px;
+    background: var(--contrast);
+    border: 2px solid var(--contrast);
+    color: var(--light-color);
+    transition: background 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    flex: 0.6;
+}
+
+.botao:hover{
+    background: var(--hover-button);
+    border-color: var(--hover-button);
+}
+
+.botao.cancelar, .botao.editar {
+    background: var(--light-color);
+    color: var(--contrast);
+    border-color: var(--contrast);
+    flex: 0.4;
+}
+.botao.cancelar:hover, .botao.editar:hover {
+    background-color: var(--hover-button);
+    color: var(--light-color);
+    border-color: var(--hover-button);
+}
+
+
+
+.body__img {
+    padding: 20px;
+    flex: 1;
+}
+.body__img img {
+    width: 100%;
+}

@@ -3,27 +3,32 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Verificação de Dados</title>
+        <title>Login Js-F</title>
         <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
         <link rel="stylesheet" href="./assets/css/base.css">
-        <link rel="stylesheet" href="./assets/css/verify-style.css">
-        <link rel="stylesheet" href="./assets/css/style.css">
+        <link rel="stylesheet" href="assets/css/login-user.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     </head>
 <body>
-    <div class="body__login">
-       <div class="usuario">
-        <label for="usuario">Usuário</label>
-        <input type="text" id="usuario" name="usuario" required>
-       </div>
-       <div>
-        <label for="senha">Senha</label>
-        <input type="password" id="senha" name="senha" required>
-       </div>
-       <div class="botoes">
-        <button class="botao editar" onclick="window.location.href = 'verify.html';">Voltar</button>
-        <button class = "botao enviar" type="submit" onclick="verify()">Enviar</button>
-       </div>
+    <div class="body__main">
+        <div class="body__login">
+            <h1 id="titulo">Área de Login</h1>
+           <div class="usuario">
+                <label for="usuario">Usuário</label>
+                <input type="text" id="usuario" name="usuario" required>
+           </div>
+           <div class="senha">
+                <label for="senha">Senha</label>
+                <input type="password" id="senha" name="senha" required>
+           </div>
+           <div class="botoes">
+                <button class="botao editar" onclick="window.location.href = 'index.html';">Voltar</button>
+                <button class = "botao enviar" type="submit" onclick="verify()">Login</button>
+           </div>
+        </div>
+        <div class="body__img">
+            <img src="assets/img/icone-light.png" alt="icone do programa jovem sem fronteiras">
+        </div>
     </div>
     <script src="assets/js/createUser.js"></script>
 </body>

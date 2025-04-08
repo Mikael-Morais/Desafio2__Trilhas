@@ -16,6 +16,8 @@ document.querySelector(".formulario").addEventListener("submit", function (event
     let confirmPassword = document.querySelector("#confirm-password").value;
 
     if (password !== confirmPassword) {
+        document.querySelector("#password").value = '';
+        document.querySelector("#confirm-password").value = '';
         alert("As senhas não coincidem. Tente novamente.");
         return;
     }
@@ -35,7 +37,6 @@ function verify() {
     const usuario = document.querySelector("#usuario").value;
     const sen = document.querySelector("#senha").value;
     if (usuario === dataSaved.user && sen === dataSaved.senha) {
-        alert("Login realizado com sucesso!");
         window.location.href = "final.html";
     } else {
         alert("Usuário ou senha incorretos. Tente novamente.");
