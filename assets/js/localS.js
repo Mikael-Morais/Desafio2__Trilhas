@@ -21,9 +21,17 @@ form.addEventListener("submit", function(event) {
             trilha: document.querySelector('input[name="trilha"]:checked')?.value || '',
             termos: document.getElementById('termos').checked
     };
+    const cpfInput = document.querySelector("#cpf");
+    const cpf = cpfInput.value;
 
+    if (!validarCPF(cpf)) {
+        alert("CPF inválido. Por favor, insira um CPF válido.");
+        cpfInput.focus();
+        return;
+    }
     localStorage.setItem("information", JSON.stringify(information));
     window.location.href = "verify.html";
+
 });
 
 window.addEventListener("load", function() {
@@ -54,3 +62,38 @@ window.addEventListener("load", function() {
         document.getElementById('termos').checked = savedInformation.termos || false;
     }
 });
+
+function validarCPF(cpf) {
+    cpf = cpf.replace(/\D/g, ''); // Remove caracteres não numéricos
+
+    if (cpf.length !== 11 || /^(\d)\1+$/.test(cpf)) {
+        return false; // Verifica se o CPF tem 11 dígitos e não é uma sequência repetida
+    }
+
+    let soma = 0;
+    let resto;
+
+    // Validação do primeiro dígito verificador
+    for (let i = 1; i <= 9; i++) {
+        soma += parseInt(cpf.substring(i - 1, i)) * (11 - i);
+    }
+    resto = (soma * 10) % 11;
+    if (resto === 10 || resto === 11) resto = 0;
+    if (resto !== parseInt(cpf.substring(9, 10))) {
+        return false;
+    }
+
+    soma = 0;
+
+    // Validação do segundo dígito verificador
+    for (let i = 1; i <= 10; i++) {
+        soma += parseInt(cpf.substring(i - 1, i)) * (12 - i);
+    }
+    resto = (soma * 10) % 11;
+    if (resto === 10 || resto === 11) resto = 0;
+    if (resto !== parseInt(cpf.substring(10, 11))) {
+        return false;
+    }
+
+    return true;
+}
