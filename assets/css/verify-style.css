@@ -60,6 +60,7 @@ header {
     font-weight: 600;
     font-size: 24px;
     font-style: normal;
+    padding: 0;
 }
 
 #subtitulo {
@@ -67,6 +68,8 @@ header {
     font-weight: 400;
     font-style: normal;
     padding: 0;
+    width: 100%;
+    text-align: left;
 }
 
 #dados-usuario {

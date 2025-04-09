@@ -29,6 +29,9 @@ form.addEventListener("submit", function(event) {
         cpfInput.focus();
         return;
     }
+    if (!validarData(document.getElementById("dataNascimento"))) {
+        return;
+    }
     localStorage.setItem("information", JSON.stringify(information));
     window.location.href = "verify.html";
 
@@ -96,4 +99,26 @@ function validarCPF(cpf) {
     }
 
     return true;
+}
+
+
+function validarData(data_input) {
+    const idadeMinima = 16;
+    let dataMinima = new Date();
+    dataMinima.setFullYear(dataMinima.getFullYear() - idadeMinima);
+    const input = data_input;
+    const dataSelecionada = new Date(input.value);
+    const hoje = new Date;
+
+    if (isNaN(dataSelecionada.getTime()) || dataSelecionada > hoje) {
+        alert("Data inválida. Por favor, insira uma data válida.");
+        input.focus();
+        return false
+    }
+    if (dataSelecionada > dataMinima) {
+        alert("Apenas maiores de 16 anos, ou que completarão 16 anos neste ano, podem se inscrever");
+        input.focus();
+        return false
+    }
+    return true
 }
