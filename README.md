@@ -17,11 +17,12 @@ O desenvolvimento do Js-F contou com as seguintes tecnologias:
 
 ## 📑 Funcionalidades
 
-- Formulário responsivo e amigável.
+- Formulário responsivo.
 - Validação de campos obrigatórios.
 - Feedback visual para erros e sucessos no envio dos dados.
+- Login para usuários cadastrados
 
-## 🚀 Como Executar o Projeto
-- acesse: https://jovem-sem-fronteira.vercel.app
+## 🚀 Como visualizar o Projeto
+- Acesse: https://jovem-sem-fronteira.vercel.app
 
 
