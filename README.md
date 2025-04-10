@@ -1,6 +1,6 @@
 # Jovem Sem Fronteira (Js-F) 🚀
 
-Bem-vindo ao **Jovem Sem Fronteira (Js-F)**! Este projeto consiste em um formulário simples e eficiente para o cadastramento de participantes no programa *Jovem Sem Fronteira*. 📝
+Bem-vindo ao **Desafio 3 do Trilhas - MA**! Este projeto consiste em um formulário simples e eficiente para o cadastramento de participantes no programa *Jovem Sem Fronteira*. 📝
 
 ## 🎯 Objetivo do Projeto
 
